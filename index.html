@@ -1,356 +1,172 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sunrise Polymold | Plastic Packaging Experts</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --canvas: #f7f7f5;
-      --card: #ffffff;
-      --accent: #e6ede4;
-      --text: #2f332f;
-      --muted: #5d615d;
-      --line: #dcded8;
-      --shadow: 0 12px 30px rgba(18, 33, 18, 0.07);
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      font-family: 'Inter', system-ui, -apple-system, sans-serif;
-      background: var(--canvas);
-      color: var(--text);
-      line-height: 1.6;
-      scroll-behavior: smooth;
-    }
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      backdrop-filter: blur(12px);
-      background: rgba(247, 247, 245, 0.85);
-      border-bottom: 1px solid var(--line);
-    }
-
-    nav {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 14px 22px;
-    }
-
-    .brand {
-      font-weight: 700;
-      letter-spacing: 0.5px;
-      color: var(--text);
-      text-transform: uppercase;
-      font-size: 0.95rem;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 18px;
-      margin: 0;
-      padding: 0;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: var(--muted);
-      font-weight: 500;
-      padding: 8px 10px;
-      border-radius: 8px;
-      transition: color 150ms ease, background 150ms ease;
-    }
-
-    nav a:hover,
-    nav a:focus-visible {
-      color: var(--text);
-      background: var(--accent);
-    }
-
-    .hero {
-      max-width: 1100px;
-      margin: 36px auto 24px;
-      padding: 26px 22px 10px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 22px;
-    }
-
-    .hero-card {
-      background: linear-gradient(145deg, #ffffff 0%, #f2f4ef 100%);
-      border-radius: 22px;
-      padding: 26px;
-      box-shadow: var(--shadow);
-      border: 1px solid var(--line);
-    }
-
-    h1 {
-      margin-top: 0;
-      font-size: 2.4rem;
-      letter-spacing: -0.5px;
-    }
-
-    .hero p {
-      margin: 10px 0 18px;
-      color: var(--muted);
-      max-width: 520px;
-    }
-
-    .tags {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    .tag {
-      background: var(--accent);
-      color: var(--text);
-      padding: 8px 12px;
-      border-radius: 999px;
-      font-weight: 600;
-      font-size: 0.9rem;
-    }
-
-    .grid {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 22px 60px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 18px;
-    }
-
-    .card {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      padding: 22px;
-      box-shadow: var(--shadow);
-    }
-
-    h2 {
-      margin: 34px auto 12px;
-      max-width: 1100px;
-      padding: 0 22px;
-      font-size: 1.4rem;
-      letter-spacing: -0.2px;
-    }
-
-    .muted {
-      color: var(--muted);
-      margin: 6px 0 0;
-      font-size: 0.95rem;
-    }
-
-    .list {
-      padding-left: 18px;
-      margin: 12px 0 0;
-      color: var(--muted);
-    }
-
-    .cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: var(--text);
-      color: #fff;
-      border: none;
-      border-radius: 999px;
-      padding: 12px 16px;
-      font-weight: 600;
-      cursor: pointer;
-      text-decoration: none;
-      box-shadow: 0 12px 20px rgba(0,0,0,0.08);
-      transition: transform 120ms ease, box-shadow 120ms ease;
-    }
-
-    .cta:hover,
-    .cta:focus-visible {
-      transform: translateY(-1px);
-      box-shadow: 0 14px 24px rgba(0,0,0,0.12);
-    }
-
-    .contact {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 18px;
-      max-width: 1100px;
-      margin: 0 auto 80px;
-      padding: 0 22px;
-    }
-
-    .contact-card {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      padding: 22px;
-      box-shadow: var(--shadow);
-    }
-
-    .contact-info {
-      margin: 14px 0;
-      color: var(--muted);
-    }
-
-    .contact small {
-      display: block;
-      color: var(--muted);
-      margin-top: 8px;
-    }
-
-    footer {
-      border-top: 1px solid var(--line);
-      padding: 22px;
-      background: #f2f3f0;
-      text-align: center;
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    @media (max-width: 640px) {
-      h1 {
-        font-size: 2rem;
-      }
-      nav {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-      }
-      nav ul {
-        flex-wrap: wrap;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sunrise Polymold - Premium Plastic Packaging Solutions</title>
+    <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header>
+    <!-- Navigation -->
     <nav>
-      <div class="brand">Sunrise Polymold</div>
-      <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#products">Products</a></li>
-        <li><a href="#quality">Capabilities</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+        <div class="nav-container">
+            <div class="logo">SUNRISE POLYMOLD</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
     </nav>
-  </header>
 
-  <section class="hero">
-    <div class="hero-card">
-      <h1>Plastic packaging tailored for modern brands</h1>
-      <p>Based in Sonipat, Haryana, Sunrise Polymold supplies B2B partners with precision-made caps, bottles, and containers for color cosmetics and personal care products. We pair clean design with consistent quality to help your brand look its best.</p>
-      <div class="tags">
-        <span class="tag">Caps & Closures</span>
-        <span class="tag">Cosmetic Bottles</span>
-        <span class="tag">Custom Containers</span>
-        <span class="tag">Reliable B2B Delivery</span>
-      </div>
-    </div>
-    <div class="hero-card">
-      <h3>Fast to market, built to last</h3>
-      <p class="muted">From mold development to final dispatch, we prioritize durability, finish, and supply-chain clarity so your shelves stay stocked.</p>
-      <a class="cta" href="#contact">Plan your next run</a>
-      <div class="muted" style="margin-top:14px;">Serving color cosmetics, skincare, and personal care leaders across India.</div>
-    </div>
-  </section>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Premium <span>Plastic Packaging</span> Solutions</h1>
+            <p>Leading manufacturer of high-quality plastic caps, bottles, and containers for color cosmetics and personal care products in Sonipat, Haryana.</p>
+            <a href="#contact" class="cta-button">Get In Touch</a>
+        </div>
+    </section>
 
-  <h2 id="about">About Sunrise Polymold</h2>
-  <section class="grid">
-    <article class="card">
-      <h3>Who we are</h3>
-      <p class="muted">A dedicated plastic manufacturing partner delivering consistent batches of caps, bottles, and containers for ambitious consumer brands.</p>
-    </article>
-    <article class="card">
-      <h3>Where we operate</h3>
-      <p class="muted">Our Sonipat (Haryana) facility is strategically located for quick distribution across North India and beyond.</p>
-    </article>
-    <article class="card">
-      <h3>How we work</h3>
-      <p class="muted">Clear communication, dependable lead times, and careful QC checkpoints keep every production run on track.</p>
-    </article>
-  </section>
+    <!-- About Section -->
+    <section id="about">
+        <h2 class="section-title">About Sunrise Polymold</h2>
+        <p class="section-subtitle">Excellence in Plastic Manufacturing Since Our Inception</p>
+        <div class="about-content">
+            <div class="about-text">
+                <p>Sunrise Polymold is a trusted name in plastic manufacturing, specializing in B2B sales of premium packaging solutions for the cosmetics and personal care industry.</p>
+                <p>Based in Sonipat, Haryana, we combine cutting-edge technology with traditional craftsmanship to deliver products that meet the highest international standards.</p>
+                <p>Our commitment to quality, innovation, and customer satisfaction has made us a preferred partner for leading brands across India.</p>
+            </div>
+            <div class="about-stats">
+                <div class="stat-box">
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label">Products Delivered</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">100+</div>
+                    <div class="stat-label">Happy Clients</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">15+</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">99%</div>
+                    <div class="stat-label">Quality Assurance</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <h2 id="products">Products</h2>
-  <section class="grid">
-    <article class="card">
-      <h3>Caps & Closures</h3>
-      <p class="muted">Flip-tops, disc-tops, droppers, and threaded caps designed for leak-free performance and a refined shelf presence.</p>
-      <ul class="list">
-        <li>Color cosmetics applicator caps</li>
-        <li>Personal care flip-top closures</li>
-        <li>Custom color matching</li>
-      </ul>
-    </article>
-    <article class="card">
-      <h3>Bottles</h3>
-      <p class="muted">Lightweight, durable bottles ready for serums, lotions, and cleansers with finishes that feel premium in hand.</p>
-      <ul class="list">
-        <li>PP, PET, and HDPE options</li>
-        <li>Frosted, matte, or glossy looks</li>
-        <li>Neck finish compatibility checks</li>
-      </ul>
-    </article>
-    <article class="card">
-      <h3>Containers</h3>
-      <p class="muted">Jars and pots for balms, creams, and powders with precision-fit lids and smooth threading.</p>
-      <ul class="list">
-        <li>Travel and full-size volumes</li>
-        <li>Logo and texture customization</li>
-        <li>Packed for safe transit</li>
-      </ul>
-    </article>
-  </section>
+    <!-- Products Section -->
+    <section id="products" style="background: white;">
+        <h2 class="section-title">Our Products</h2>
+        <p class="section-subtitle">Comprehensive Range of Plastic Packaging Solutions</p>
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-icon">🔘</div>
+                <h3>Plastic Caps</h3>
+                <p>High-quality caps in various sizes and designs, perfect for cosmetics and personal care products. Custom colors and finishes available.</p>
+            </div>
+            <div class="product-card">
+                <div class="product-icon">🧴</div>
+                <h3>Bottles</h3>
+                <p>Durable and elegant bottles for lotions, serums, and liquid products. Available in multiple capacities with custom branding options.</p>
+            </div>
+            <div class="product-card">
+                <div class="product-icon">📦</div>
+                <h3>Containers</h3>
+                <p>Premium containers for creams, powders, and color cosmetics. Leak-proof designs with superior finish and durability.</p>
+            </div>
+            <div class="product-card">
+                <div class="product-icon">💄</div>
+                <h3>Color Cosmetics Packaging</h3>
+                <p>Specialized packaging solutions for lipsticks, compacts, and makeup products with elegant aesthetics.</p>
+            </div>
+            <div class="product-card">
+                <div class="product-icon">🎨</div>
+                <h3>Custom Solutions</h3>
+                <p>Tailored packaging designs to meet your specific requirements with our in-house design and manufacturing capabilities.</p>
+            </div>
+            <div class="product-card">
+                <div class="product-icon">✨</div>
+                <h3>Premium Finishes</h3>
+                <p>Matte, glossy, metallic, and soft-touch finishes to elevate your product presentation and brand image.</p>
+            </div>
+        </div>
+    </section>
 
-  <h2 id="quality">Capabilities</h2>
-  <section class="grid">
-    <article class="card">
-      <h3>Tooling & molds</h3>
-      <p class="muted">In-house tooling support helps refine form, fit, and finish before scaling production.</p>
-    </article>
-    <article class="card">
-      <h3>Material guidance</h3>
-      <p class="muted">Assistance selecting resins and additives to balance rigidity, clarity, and sustainability goals.</p>
-    </article>
-    <article class="card">
-      <h3>Quality control</h3>
-      <p class="muted">Batch inspections, seal tests, and visual checks ensure reliable closures and consistent aesthetics.</p>
-    </article>
-  </section>
+    <!-- Services Section -->
+    <section id="services">
+        <h2 class="section-title">Our Services</h2>
+        <p class="section-subtitle">End-to-End Solutions for Your Packaging Needs</p>
+        <div class="services-list">
+            <div class="service-item">
+                <h4>Custom Design</h4>
+                <p>Work with our design team to create unique packaging that reflects your brand identity.</p>
+            </div>
+            <div class="service-item">
+                <h4>Quality Testing</h4>
+                <p>Rigorous quality control measures ensure every product meets international standards.</p>
+            </div>
+            <div class="service-item">
+                <h4>Bulk Manufacturing</h4>
+                <p>Large-scale production capabilities to meet your B2B requirements with consistent quality.</p>
+            </div>
+            <div class="service-item">
+                <h4>Timely Delivery</h4>
+                <p>Efficient logistics and supply chain management for on-time delivery across India.</p>
+            </div>
+        </div>
+    </section>
 
-  <h2 id="contact">Contact</h2>
-  <section class="contact">
-    <div class="contact-card">
-      <h3>Start a project</h3>
-      <p class="contact-info">Call: <a href="tel:+911112223333">+91 11 1222 3333</a><br>Email: <a href="mailto:hello@sunrisepolymold.com">hello@sunrisepolymold.com</a></p>
-      <small>Share your product type, volumes, and timelines. We will respond with specs and next steps.</small>
-    </div>
-    <div class="contact-card">
-      <h3>Visit us</h3>
-      <p class="contact-info">Plot 12, Industrial Estate<br>Sonipat, Haryana</p>
-      <small>Factory visits by appointment. Parking available on-site.</small>
-    </div>
-    <div class="contact-card">
-      <h3>Logistics-ready</h3>
-      <p class="contact-info">Coordinated dispatch to regional hubs with protective packing to keep every unit intact.</p>
-      <small>Ask about MOQ options and pallet configuration.</small>
-    </div>
-  </section>
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2 class="section-title">Get In Touch</h2>
+        <p class="section-subtitle">Let's Discuss Your Packaging Requirements</p>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Contact Information</h3>
+                <div class="info-item">
+                    <h4>Location</h4>
+                    <p>Sonipat, Haryana, India<br><a class="map-link" href="https://maps.app.goo.gl/JRUcuyECgXUBb96n8" target="_blank" rel="noopener">Open in Google Maps</a></p>
+                </div>
+                <div class="info-item">
+                    <h4>Email</h4>
+                    <p><a href="mailto:divyamarora2213@gmail.com">divyamarora2213@gmail.com</a></p>
+                </div>
+                <div class="info-item">
+                    <h4>Phone</h4>
+                    <p><a href="tel:+919999114518">+91 9999114518</a></p>
+                </div>
+                <div class="info-item">
+                    <h4>Business Hours</h4>
+                    <p>Monday - Saturday: 9:00 AM - 6:00 PM</p>
+                </div>
+            </div>
+            <div class="contact-form">
+                <form id="contactForm">
+                    <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    <input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
+                    <input type="text" id="company" name="company" placeholder="Company Name">
+                    <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+                    <button type="submit" class="submit-button">Send Message</button>
+                    <p id="formStatus" style="margin-top:12px;color:#666;font-size:0.95rem;"></p>
+                </form>
+            </div>
+        </div>
+    </section>
 
-  <footer>
-    Sunrise Polymold — Plastic packaging you can rely on.
-  </footer>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Sunrise Polymold. All rights reserved. | Premium Plastic Packaging Solutions</p>
+    </footer>
+
+    
+    <script src="script.js"></script>
 </body>
 </html>
